@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Dia dos Namorados ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="start-screen" class="quiz-container">
+        <div class="quiz fade-in">
+            <h1>Bem-vinda 💘</h1>
+            <h2>Quer descobrir quem é seu admirador secreto? Então começa esse quiz logo pra mim te conhecer melhor hehe 😬</h2>
+            <br>
+            <h2>Sei que estou atrasado, o entregador atrasou a entrega hihihi 🤭</h2>
+            <br>
+            <h3>Ligue o som pra melhor experiência 🎶😉</h3>
+            <br>
+            <button id="start-button">Iniciar Quiz</button>
+        </div>
+    </div>
+
+    <div id="main-quiz" style="display: none;">
+    <audio id="background-music" src="assets/background.mp3" loop></audio>
+    <div id="floating-emojis"></div>
+    <div class="hearts">
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz fade-in">
+            <h1>💕</h1>
+            <p id="header-quiz">Vamos descobrir mais sobre você para uma pessoa especial!</p>
+            <br id="space-header">
+            <div class="question-container">
+                <p class="question">Qual é o seu tipo de filme preferido?</p>
+                <button class="answer" onclick="nextQuestion('Romance')">Romance</button>
+                <button class="answer" onclick="nextQuestion('Ação')">Ação</button>
+                <button class="answer" onclick="nextQuestion('Comédia')">Comédia</button>
+                <button class="answer" onclick="nextQuestion('Drama/Terror')">Drama/Terror</button>
+            </div>
+            <div class="final-question" style="display:none;">
+                <p class="question">Você toparia sair para um encontro com o misterioso depois de descobrir quem é, pra gente se conhecer melhor?</p>
+                <div class="choice-buttons">
+                    <button id="yes-button" onclick="showResult()">Sim</button>
+                    <button id="no-button">Talvez</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="result fade-in" style="display:none;">
+            <h2>Ebaaaa!!</h2>
+            <p id="result-text"></p>
+            <br>
+            <h2>Hmmm, bom saber, tu tem bom gosto!</h2>
+            <br>
+            <h3>Deixei um presentinho reservado no Ponto dos Acessórios, só apresentar uma print dessa tela com o codigo. Com o QR Code junto com o presente você ira descobrir quem é o misterioso hehe</h3>
+            <h1>Cod: 91-44</h1>
+        </div>
+    </div>
+
+    <audio id="success-sound" src="https://www.myinstants.com/media/sounds/yeay-childrens.mp3" preload="auto"></audio>
+    <audio id="click-sound" src="https://www.myinstants.com/media/sounds/correct.mp3" preload="auto"></audio>
+    <audio id="nope-sound" src="https://www.myinstants.com/media/sounds/engineer_no01_1.mp3" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

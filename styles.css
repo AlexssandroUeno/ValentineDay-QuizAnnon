@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ffc0cb, #ff69b4);
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center;
+    margin: 30px;
+}
+
+.quiz-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff1493;
+}
+
+.question {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.answer, #yes-button, #no-button, #start-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.answer, #yes-button, #start-button {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.answer:hover, #yes-button:hover, #start-button:hover {
+    background-color: #ff1493;
+    transform: scale(1.05);
+}
+
+#no-button {
+    background-color: #dc143c;
+    color: white;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#no-button.move {
+    top: var(--top-move);
+    left: var(--left-move);
+}
+
+button:focus {
+    outline: none;
+}
+
+.result {
+    display: none;
+}
+
+button {
+    padding: 15px 20px;
+    font-size: 1rem;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .question {
+        font-size: 1.1rem;
+    }
+
+    .answer, #yes-button, #no-button, #start-button {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+}
+
+.floating-emoji {
+    position: fixed;
+    font-size: 2.5rem;
+    z-index: 0;
+    animation: floatUp 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
